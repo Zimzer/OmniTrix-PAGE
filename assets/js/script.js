@@ -246,56 +246,52 @@ function generateCommandGroups() {
   const commandList = document.querySelector('.command-list');
 
   const musicCommands = `
-    <div class="command-group active" data-group="music">
-      <h3 class="command-category-title"><i class="fas fa-music"></i> Music Commands</h3>
+    <div class="command-group active" data-group="Administration">
+      <h3 class="command-category-title"><i class="fa-solid fa-shield-halved"></i> Administration Commands</h3>
       <div class="command-category-list">
         <div class="command-item">
-          <div class="command-name"><i class="fas fa-play"></i> play</div>
-          <div class="command-description">Play a song from Spotify, YouTube, or SoundCloud</div>
+          <div class="command-name"><i class="fas fa-play"></i> ban</div>
+          <div class="command-description">Bans a user from the server</div>
         </div>
         <div class="command-item">
-          <div class="command-name"><i class="fas fa-list"></i> queue</div>
-          <div class="command-description">View the current queue of songs</div>
+          <div class="command-name"><i class="fas fa-play"></i> unban</div>
+          <div class="command-description">Unbans a user by ID</div>
         </div>
         <div class="command-item">
-          <div class="command-name"><i class="fas fa-forward"></i> skip</div>
-          <div class="command-description">Skip to the next song in the queue</div>
+          <div class="command-name"><i class="fas fa-play"></i> kick</div>
+          <div class="command-description">Kicks the user from the server</div>
         </div>
         <div class="command-item">
-          <div class="command-name"><i class="fas fa-backward"></i> previous</div>
-          <div class="command-description">Play the previous song</div>
+          <div class="command-name"><i class="fas fa-play"></i> mute</div>
+          <div class="command-description">Mute a user for a specific period of time or permanently</div>
         </div>
         <div class="command-item">
-          <div class="command-name"><i class="fas fa-music"></i> lyrics</div>
-          <div class="command-description">Show lyrics for the current song</div>
+          <div class="command-name"><i class="fas fa-play"></i> unmute</div>
+          <div class="command-description">Unmute a user</div>
         </div>
         <div class="command-item">
-          <div class="command-name"><i class="fas fa-pause"></i> pause</div>
-          <div class="command-description">Pause the current song</div>
+          <div class="command-name"><i class="fas fa-play"></i> clear</div>
+          <div class="command-description">Deletes messages from the channel</div>
         </div>
         <div class="command-item">
-          <div class="command-name"><i class="fas fa-play"></i> resume</div>
-          <div class="command-description">Resume the paused song</div>
+          <div class="command-name"><i class="fas fa-play"></i> listbans</div>
+          <div class="command-description">Shows a list of all bans</div>
         </div>
         <div class="command-item">
-          <div class="command-name"><i class="fas fa-stop"></i> stop</div>
-          <div class="command-description">Stop playback and clear the queue</div>
+          <div class="command-name"><i class="fas fa-play"></i> nuke</div>
+          <div class="command-description">Creates a fresh channel with the same settings</div>
         </div>
         <div class="command-item">
-          <div class="command-name"><i class="fas fa-volume-up"></i> volume</div>
-          <div class="command-description">Adjust the playback volume</div>
-        </div>
-        <div class="command-item">
-          <div class="command-name"><i class="fas fa-random"></i> shuffle</div>
-          <div class="command-description">Shuffle the current queue</div>
+          <div class="command-name"><i class="fas fa-play"></i> slowmode</div>
+          <div class="command-description">Sets the time between sending messages</div>
         </div>
       </div>
     </div>
   `;
 
   const filterCommands = `
-    <div class="command-group" data-group="filters">
-      <h3 class="command-category-title"><i class="fas fa-sliders-h"></i> Filter Commands</h3>
+    <div class="command-group" data-group="music">
+      <h3 class="command-category-title"><i class="fa-solid fa-music"></i> Music Commands [SOON]</h3>
       <div class="command-category-list">
         <div class="command-item">
           <div class="command-name"><i class="fas fa-volume-up"></i> filter bassboost</div>
@@ -342,96 +338,48 @@ function generateCommandGroups() {
   `;
 
   const playlistCommands = `
-    <div class="command-group" data-group="playlist">
-      <h3 class="command-category-title"><i class="fas fa-list"></i> Playlist Commands</h3>
+    <div class="command-group" data-group="fun">
+      <h3 class="command-category-title"><i class="fa-solid fa-face-smile"></i> Fun Commands</h3>
       <div class="command-category-list">
         <div class="command-item">
-          <div class="command-name"><i class="fas fa-plus-circle"></i> playlist create</div>
+          <div class="command-name"><i class="fas fa-play"></i> cat</div>
           <div class="command-description">Create a new playlist</div>
         </div>
         <div class="command-item">
-          <div class="command-name"><i class="fas fa-plus"></i> playlist add</div>
+          <div class="command-name"><i class="fas fa-play"></i> dog</div>
           <div class="command-description">Add a song to a playlist</div>
         </div>
         <div class="command-item">
-          <div class="command-name"><i class="fas fa-minus"></i> playlist remove</div>
+          <div class="command-name"><i class="fas fa-play"></i> 8ball</div>
           <div class="command-description">Remove a song from a playlist</div>
-        </div>
-        <div class="command-item">
-          <div class="command-name"><i class="fas fa-play-circle"></i> playlist load</div>
-          <div class="command-description">Load and play a playlist</div>
-        </div>
-        <div class="command-item">
-          <div class="command-name"><i class="fas fa-list-ul"></i> playlist list</div>
-          <div class="command-description">View all your playlists</div>
-        </div>
-        <div class="command-item">
-          <div class="command-name"><i class="fas fa-info-circle"></i> playlist info</div>
-          <div class="command-description">View details of a specific playlist</div>
-        </div>
-        <div class="command-item">
-          <div class="command-name"><i class="fas fa-trash-alt"></i> playlist delete</div>
-          <div class="command-description">Delete a playlist</div>
-        </div>
-        <div class="command-item">
-          <div class="command-name"><i class="fab fa-spotify"></i> playlist import</div>
-          <div class="command-description">Import a playlist from Spotify</div>
-        </div>
-        <div class="command-item">
-          <div class="command-name"><i class="fas fa-random"></i> playlist shuffle</div>
-          <div class="command-description">Shuffle a playlist before playing</div>
-        </div>
-        <div class="command-item">
-          <div class="command-name"><i class="fas fa-share-alt"></i> playlist share</div>
-          <div class="command-description">Share a playlist with other users</div>
         </div>
       </div>
     </div>
   `;
 
   const utilityCommands = `
-    <div class="command-group" data-group="utility">
+    <div class="command-group" data-group="Utility">
       <h3 class="command-category-title"><i class="fas fa-tools"></i> Utility Commands</h3>
       <div class="command-category-list">
         <div class="command-item">
-          <div class="command-name"><i class="fas fa-question-circle"></i> help</div>
+          <div class="command-name"><i class="fas fa-play"></i> help</div>
           <div class="command-description">Show all available commands</div>
         </div>
         <div class="command-item">
-          <div class="command-name"><i class="fas fa-tachometer-alt"></i> ping</div>
+          <div class="command-name"><i class="fas fa-play"></i> ping</div>
           <div class="command-description">Check bot's response time</div>
         </div>
         <div class="command-item">
-          <div class="command-name"><i class="fas fa-link"></i> invite</div>
+          <div class="command-name"><i class="fas fa-play"></i> avatar</div>
           <div class="command-description">Get bot invite link</div>
         </div>
         <div class="command-item">
-          <div class="command-name"><i class="fas fa-headset"></i> support</div>
+          <div class="command-name"><i class="fas fa-play"></i> userinfo</div>
           <div class="command-description">Get support server link</div>
         </div>
         <div class="command-item">
-          <div class="command-name"><i class="fas fa-vote-yea"></i> vote</div>
+          <div class="command-name"><i class="fas fa-play"></i> serverinfo</div>
           <div class="command-description">Vote for Candy Bot</div>
-        </div>
-        <div class="command-item">
-          <div class="command-name"><i class="fas fa-cog"></i> settings</div>
-          <div class="command-description">Configure bot settings for your server</div>
-        </div>
-        <div class="command-item">
-          <div class="command-name"><i class="fas fa-language"></i> language</div>
-          <div class="command-description">Change the bot's language</div>
-        </div>
-        <div class="command-item">
-          <div class="command-name"><i class="fas fa-info-circle"></i> botinfo</div>
-          <div class="command-description">View information about the bot</div>
-        </div>
-        <div class="command-item">
-          <div class="command-name"><i class="fas fa-server"></i> serverinfo</div>
-          <div class="command-description">View information about the server</div>
-        </div>
-        <div class="command-item">
-          <div class="command-name"><i class="fas fa-user"></i> userinfo</div>
-          <div class="command-description">View information about a user</div>
         </div>
       </div>
     </div>
