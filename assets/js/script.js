@@ -244,108 +244,67 @@ function generateCommandGroups() {
       <h3 class="command-category-title"><i class="fa-solid fa-shield-halved"></i> Administration Commands</h3>
       <div class="command-category-list">
         <div class="command-item">
-          <div class="command-name"><i class="fas fa-play"></i> ban</div>
+          <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>ban</div>
           <div class="command-description">Bans a user from the server</div>
         </div>
         <div class="command-item">
-          <div class="command-name"><i class="fas fa-play"></i> unban</div>
+          <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>unban</div>
           <div class="command-description">Unbans a user by ID</div>
         </div>
         <div class="command-item">
-          <div class="command-name"><i class="fas fa-play"></i> kick</div>
+          <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>kick</div>
           <div class="command-description">Kicks the user from the server</div>
         </div>
         <div class="command-item">
-          <div class="command-name"><i class="fas fa-play"></i> mute</div>
+          <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>mute</div>
           <div class="command-description">Mute a user for a specific period of time or permanently</div>
         </div>
         <div class="command-item">
-          <div class="command-name"><i class="fas fa-play"></i> unmute</div>
+          <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>unmute</div>
           <div class="command-description">Unmute a user</div>
         </div>
         <div class="command-item">
-          <div class="command-name"><i class="fas fa-play"></i> clear</div>
+          <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>clear</div>
           <div class="command-description">Deletes messages from the channel</div>
         </div>
         <div class="command-item">
-          <div class="command-name"><i class="fas fa-play"></i> listbans</div>
+          <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>listbans</div>
           <div class="command-description">Shows a list of all bans</div>
         </div>
         <div class="command-item">
-          <div class="command-name"><i class="fas fa-play"></i> nuke</div>
+          <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>nuke</div>
           <div class="command-description">Creates a fresh channel with the same settings</div>
         </div>
         <div class="command-item">
-          <div class="command-name"><i class="fas fa-play"></i> slowmode</div>
+          <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>slowmode</div>
           <div class="command-description">Sets the time between sending messages</div>
         </div>
-      </div>
-    </div>
-  `;
-
-  const filterCommands = `
-    <div class="command-group" data-group="music">
-      <h3 class="command-category-title"><i class="fa-solid fa-music"></i> Music Commands [SOON]</h3>
-      <div class="command-category-list">
         <div class="command-item">
-          <div class="command-name"><i class="fas fa-volume-up"></i> filter bassboost</div>
-          <div class="command-description">Add bass boost effect to the music</div>
-        </div>
-        <div class="command-item">
-          <div class="command-name"><i class="fas fa-moon"></i> filter nightcore</div>
-          <div class="command-description">Add nightcore effect to the music</div>
-        </div>
-        <div class="command-item">
-          <div class="command-name"><i class="fas fa-microphone-slash"></i> filter karaoke</div>
-          <div class="command-description">Remove vocals from the music</div>
-        </div>
-        <div class="command-item">
-          <div class="command-name"><i class="fas fa-water"></i> filter vaporwave</div>
-          <div class="command-description">Add vaporwave effect to the music</div>
-        </div>
-        <div class="command-item">
-          <div class="command-name"><i class="fas fa-undo"></i> filter reset</div>
-          <div class="command-description">Reset all filters</div>
-        </div>
-        <div class="command-item">
-          <div class="command-name"><i class="fas fa-drum"></i> filter 8D</div>
-          <div class="command-description">Add 8D audio effect to the music</div>
-        </div>
-        <div class="command-item">
-          <div class="command-name"><i class="fas fa-bolt"></i> filter tremolo</div>
-          <div class="command-description">Add tremolo effect to the music</div>
-        </div>
-        <div class="command-item">
-          <div class="command-name"><i class="fas fa-wave-square"></i> filter vibrato</div>
-          <div class="command-description">Add vibrato effect to the music</div>
-        </div>
-        <div class="command-item">
-          <div class="command-name"><i class="fas fa-robot"></i> filter chipmunk</div>
-          <div class="command-description">Add chipmunk effect to the music</div>
-        </div>
-        <div class="command-item">
-          <div class="command-name"><i class="fas fa-sliders-h"></i> filter equalizer</div>
-          <div class="command-description">Customize equalizer settings</div>
+          <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>represet</div>
+          <div class="command-description">Resets reputation on this server</div>
         </div>
       </div>
     </div>
   `;
-
   const playlistCommands = `
     <div class="command-group" data-group="fun">
       <h3 class="command-category-title"><i class="fa-solid fa-face-smile"></i> Fun Commands</h3>
       <div class="command-category-list">
         <div class="command-item">
-          <div class="command-name"><i class="fas fa-play"></i> cat</div>
+          <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>cat</div>
           <div class="command-description">Create a new playlist</div>
         </div>
         <div class="command-item">
-          <div class="command-name"><i class="fas fa-play"></i> dog</div>
+          <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>dog</div>
           <div class="command-description">Add a song to a playlist</div>
         </div>
         <div class="command-item">
-          <div class="command-name"><i class="fas fa-play"></i> 8ball</div>
+          <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>8ball</div>
           <div class="command-description">Remove a song from a playlist</div>
+        </div>
+        <div class="command-item">
+          <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>math</div>
+          <div class="command-description">Calculates a mathematical operation</div>
         </div>
       </div>
     </div>
@@ -356,30 +315,50 @@ function generateCommandGroups() {
       <h3 class="command-category-title"><i class="fas fa-tools"></i> Utility Commands</h3>
       <div class="command-category-list">
         <div class="command-item">
-          <div class="command-name"><i class="fas fa-play"></i> help</div>
+          <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>help</div>
           <div class="command-description">Show all available commands</div>
         </div>
         <div class="command-item">
-          <div class="command-name"><i class="fas fa-play"></i> ping</div>
+          <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>ping</div>
           <div class="command-description">Check bot's response time</div>
         </div>
         <div class="command-item">
-          <div class="command-name"><i class="fas fa-play"></i> avatar</div>
+          <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>avatar</div>
           <div class="command-description">Get bot invite link</div>
         </div>
         <div class="command-item">
-          <div class="command-name"><i class="fas fa-play"></i> userinfo</div>
+          <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>userinfo</div>
           <div class="command-description">Get support server link</div>
         </div>
         <div class="command-item">
-          <div class="command-name"><i class="fas fa-play"></i> serverinfo</div>
+          <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>serverinfo</div>
           <div class="command-description">Vote for Candy Bot</div>
+        </div>
+        <div class="command-item">
+          <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>weather</div>
+          <div class="command-description">Displays current weather information in a given city or country</div>
+        </div>
+        <div class="command-item">
+          <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>rep</div>
+          <div class="command-description">Give a reputation point to a user</div>
+        </div>
+        <div class="command-item">
+          <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>reps</div>
+          <div class="command-description">Check reputation</div>
+        </div>
+        <div class="command-item">
+          <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>repleaderboard</div>
+          <div class="command-description">Reputation ranking on this server</div>
+        </div>
+        <div class="command-item">
+          <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>invite</div>
+          <div class="command-description">Link to invite the bot to other servers</div>
         </div>
       </div>
     </div>
   `;
 
-  commandList.innerHTML = musicCommands + filterCommands + playlistCommands + utilityCommands;
+  commandList.innerHTML = musicCommands + playlistCommands + utilityCommands;
 }
 
 function generateIconGrid() {
