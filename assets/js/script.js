@@ -292,15 +292,15 @@ function generateCommandGroups() {
       <div class="command-category-list">
         <div class="command-item">
           <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>cat</div>
-          <div class="command-description">Create a new playlist</div>
+          <div class="command-description">Sends a random cat</div>
         </div>
         <div class="command-item">
           <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>dog</div>
-          <div class="command-description">Add a song to a playlist</div>
+          <div class="command-description">Sends a random dog</div>
         </div>
         <div class="command-item">
           <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>8ball</div>
-          <div class="command-description">Remove a song from a playlist</div>
+          <div class="command-description">Random answer to a question</div>
         </div>
         <div class="command-item">
           <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>math</div>
@@ -332,7 +332,7 @@ function generateCommandGroups() {
         </div>
         <div class="command-item">
           <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>serverinfo</div>
-          <div class="command-description">Vote for Candy Bot</div>
+          <div class="command-description">Displays information about the server</div>
         </div>
         <div class="command-item">
           <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>weather</div>
