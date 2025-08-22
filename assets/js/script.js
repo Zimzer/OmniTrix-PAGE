@@ -306,6 +306,10 @@ function generateCommandGroups() {
           <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>math</div>
           <div class="command-description">Calculates a mathematical operation</div>
         </div>
+        <div class="command-item">
+          <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>minecraft-status</div>
+          <div class="command-description">Check the status of a Minecraft server</div>
+        </div>
       </div>
     </div>
   `;
