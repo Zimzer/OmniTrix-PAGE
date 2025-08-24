@@ -283,6 +283,10 @@ function generateCommandGroups() {
           <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>represet</div>
           <div class="command-description">Resets reputation on this server</div>
         </div>
+        <div class="command-item">
+          <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>setlang</div>
+          <div class="command-description">Set the bot language on the server</div>
+        </div>
       </div>
     </div>
   `;
