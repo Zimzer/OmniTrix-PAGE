@@ -1,4 +1,227 @@
+// --- TRANSLATIONS OBJECT ---
+// All text content for the website in English and Polish
+const translations = {
+  en: {
+    // Meta Tags
+    meta_title: "OmniTrix - BOT",
+    meta_title_content: "OmniTrix - Multifunctional Bot",
+    meta_description_content: "OmniTrix - The highest quality app for your Discord server!",
+    // Navigation & Buttons
+    nav_features: "Features",
+    nav_commands: "Commands",
+    nav_support: "Support",
+    btn_support_server: "Support Server",
+    btn_add_to_discord: "Add to Discord",
+    // Hero Section
+    hero_badge: "Discord multifunctional Bot",
+    hero_title: "OmniTrix - The highest quality app for your Discord server!",
+    hero_description: "Hey, I'm OmniTrix!",
+    hero_feat_admin: "Administrative Functions",
+    hero_feat_support: "24/7 Support",
+    hero_feat_updates: "Constantly updated",
+    btn_add_to_discord_hero: "Add to Discord",
+    btn_see_features: "See Features",
+    // Features Section
+    features_title: "Why Choose OmniTrix?",
+    features_subtitle: "We try our best to optimize applications!",
+    feature1_title: "Moderation",
+    feature1_desc: "Our bot is equipped with an extensive moderation system that simplifies server management and maintains order in the community. Thanks to intuitive and clear commands, you can quickly respond to undesirable behavior, block users, and select the number of messages to delete.",
+    feature2_title: "Positive user reviews",
+    feature2_desc: "Our bot is highly regarded within the Discord community. Users particularly appreciate its reliability, speed, and intuitive commands, which make it simple and enjoyable to use. Thanks to regular updates and active support, the bot is constantly evolving, providing more and more features tailored to the real needs of servers.",
+    feature3_title: "24/7 Support",
+    feature3_desc: "We want every user of our bot to be able to use it without interruption at any time of the day or night. That's why we offer 24/7 technical support, ensuring quick troubleshooting and assistance with bot configuration and operation.",
+    // Commands Section
+    commands_title: "Flexible Controls & Commands",
+    commands_subtitle: "Control your server and more!",
+    cmd_category_admin: "Administration",
+    cmd_category_utility: "Utility",
+    cmd_category_fun: "Fun",
+    cmd_admin_title: "Administration Commands",
+    cmd_ban_desc: "Bans a user from the server",
+    cmd_unban_desc: "Unbans a user by ID",
+    cmd_kick_desc: "Kicks the user from the server",
+    cmd_mute_desc: "Mute a user for a specific period of time or permanently",
+    cmd_unmute_desc: "Unmute a user",
+    cmd_clear_desc: "Deletes messages from the channel",
+    cmd_listbans_desc: "Shows a list of all bans",
+    cmd_nuke_desc: "Creates a fresh channel with the same settings",
+    cmd_slowmode_desc: "Sets the time between sending messages",
+    cmd_represet_desc: "Resets reputation on this server",
+    cmd_setlang_desc: "Set the bot language on the server",
+    cmd_fun_title: "Fun Commands",
+    cmd_cat_desc: "Sends a random cat",
+    cmd_dog_desc: "Sends a random dog",
+    cmd_8ball_desc: "Random answer to a question",
+    cmd_math_desc: "Calculates a mathematical operation",
+    cmd_mcstatus_desc: "Check the status of a Minecraft server",
+    cmd_utility_title: "Utility Commands",
+    cmd_help_desc: "Show all available commands",
+    cmd_ping_desc: "Check bot's response time",
+    cmd_avatar_desc: "Get user's avatar",
+    cmd_userinfo_desc: "Get information about a user",
+    cmd_serverinfo_desc: "Displays information about the server",
+    cmd_weather_desc: "Displays current weather information in a given city or country",
+    cmd_rep_desc: "Give a reputation point to a user",
+    cmd_reps_desc: "Check reputation",
+    cmd_repleaderboard_desc: "Reputation ranking on this server",
+    cmd_invite_desc: "Link to invite the bot to other servers",
+    // Community Section
+    community_title: "Join Our Community",
+    community_subtitle: "Get help, share feedback, and connect with other server owners",
+    support_card1_title: "Support Server",
+    support_card1_desc: "Join our Discord community for instant support, updates, and to connect with other OmniTrix users.",
+    btn_join_support: "Support Server",
+    support_card2_title: "Vote Now",
+    support_card2_desc: "Show your love for OmniTrix by voting for us! Every single vote helps us grow and deliver even better features to you.",
+    btn_vote_now: "Vote Now",
+    // Footer
+    footer_links: "Links",
+    footer_legal: "Legal",
+    footer_terms: "Terms of Service",
+    footer_privacy: "Privacy Policy",
+    footer_connect: "Connect",
+    footer_vote: "Vote on Top.gg",
+    footer_copyright: "&copy; 2025 OmniTrix. All rights reserved.",
+  },
+  pl: {
+    // Meta Tags
+    meta_title: "OmniTrix - BOT",
+    meta_title_content: "OmniTrix - Wielofunkcyjny Bot",
+    meta_description_content: "OmniTrix - Najwyższej jakości aplikacja dla Twojego serwera Discord!",
+    // Navigation & Buttons
+    nav_features: "Funkcje",
+    nav_commands: "Komendy",
+    nav_support: "Wsparcie",
+    btn_support_server: "Serwer Wsparcia",
+    btn_add_to_discord: "Dodaj na Discorda",
+    // Hero Section
+    hero_badge: "Wielofunkcyjny bot na Discorda",
+    hero_title: "OmniTrix - Najwyższej jakości aplikacja dla Twojego serwera Discord!",
+    hero_description: "Cześć, jestem OmniTrix!",
+    hero_feat_admin: "Funkcje administracyjne",
+    hero_feat_support: "Wsparcie 24/7",
+    hero_feat_updates: "Ciągle aktualizowany",
+    btn_add_to_discord_hero: "Dodaj na Discorda",
+    btn_see_features: "Zobacz Funkcje",
+    // Features Section
+    features_title: "Dlaczego Warto Wybrać OmniTrix?",
+    features_subtitle: "Dokładamy wszelkich starań, aby optymalizować aplikacje!",
+    feature1_title: "Moderacja",
+    feature1_desc: "Nasz bot jest wyposażony w rozbudowany system moderacji, który ułatwia zarządzanie serwerem i utrzymanie porządku w społeczności. Dzięki intuicjnym i jasnym komendom możesz szybko reagować na niepożądane zachowania, blokować użytkowników i wybierać liczbę wiadomości do usunięcia.",
+    feature2_title: "Pozytywne opinie użytkowników",
+    feature2_desc: "Nasz bot jest wysoko oceniany w społeczności Discorda. Użytkownicy szczególnie doceniają jego niezawodność, szybkość i intuicyjne komendy, które sprawiają, że korzystanie z niego jest proste i przyjemne. Dzięki regularnym aktualizacjom i aktywnemu wsparciu bot stale się rozwija, dostarczając coraz więcej funkcji dostosowanych do realnych potrzeb serwerów.",
+    feature3_title: "Wsparcie 24/7",
+    feature3_desc: "Chcemy, aby każdy użytkownik naszego bota mógł korzystać z niego bez przerw o każdej porze dnia i nocy. Dlatego oferujemy całodobowe wsparcie techniczne, zapewniając szybkie rozwiązywanie problemów oraz pomoc w konfiguracji i obsłudze bota.",
+    // Commands Section
+    commands_title: "Elastyczne Sterowanie i Komendy",
+    commands_subtitle: "Kontroluj swój serwer i nie tylko!",
+    cmd_category_admin: "Administracja",
+    cmd_category_utility: "Użytkowe",
+    cmd_category_fun: "Zabawa",
+    cmd_admin_title: "Komendy Administracyjne",
+    cmd_ban_desc: "Banuje użytkownika na serwerze",
+    cmd_unban_desc: "Odbanowuje użytkownika po ID",
+    cmd_kick_desc: "Wyrzuca użytkownika z serwera",
+    cmd_mute_desc: "Wycisza użytkownika na określony czas lub na stałe",
+    cmd_unmute_desc: "Odcisza użytkownika",
+    cmd_clear_desc: "Usuwa wiadomości z kanału",
+    cmd_listbans_desc: "Pokazuje listę wszystkich banów",
+    cmd_nuke_desc: "Tworzy nowy kanał z tymi samymi ustawieniami",
+    cmd_slowmode_desc: "Ustawia czas pomiędzy wysyłaniem wiadomości",
+    cmd_represet_desc: "Resetuje reputację na tym serwerze",
+    cmd_setlang_desc: "Ustawia język bota na serwerze",
+    cmd_fun_title: "Komendy 4Fun",
+    cmd_cat_desc: "Wysyła losowego kota",
+    cmd_dog_desc: "Wysyła losowego psa",
+    cmd_8ball_desc: "Losowa odpowiedź na pytanie",
+    cmd_math_desc: "Oblicza działanie matematyczne",
+    cmd_mcstatus_desc: "Sprawdza status serwera Minecraft",
+    cmd_utility_title: "Komendy Użytkowe",
+    cmd_help_desc: "Pokazuje wszystkie dostępne komendy",
+    cmd_ping_desc: "Sprawdza czas odpowiedzi bota",
+    cmd_avatar_desc: "Pobiera awatar użytkownika",
+    cmd_userinfo_desc: "Pobiera informacje o użytkowniku",
+    cmd_serverinfo_desc: "Wyświetla informacje o serwerze",
+    cmd_weather_desc: "Wyświetla aktualne informacje o pogodzie w danym mieście",
+    cmd_rep_desc: "Daje punkt reputacji użytkownikowi",
+    cmd_reps_desc: "Sprawdza reputację",
+    cmd_repleaderboard_desc: "Ranking reputacji na tym serwerze",
+    cmd_invite_desc: "Link do zaproszenia bota na inne serwery",
+    // Community Section
+    community_title: "Dołącz do Naszej Społeczności",
+    community_subtitle: "Uzyskaj pomoc, podziel się opinią i połącz się z innymi właścicielami serwerów",
+    support_card1_title: "Serwer Wsparcia",
+    support_card1_desc: "Dołącz do naszej społeczności na Discordzie, aby uzyskać natychmiastowe wsparcie, aktualizacje i połączyć się z innymi użytkownikami OmniTrix.",
+    btn_join_support: "Serwer Wsparcia",
+    support_card2_title: "Głosuj Teraz",
+    support_card2_desc: "Okaż swoje wsparcie dla OmniTrix, głosując na nas! Każdy głos pomaga nam się rozwijać i dostarczać jeszcze lepsze funkcje.",
+    btn_vote_now: "Głosuj Teraz",
+    // Footer
+    footer_links: "Linki",
+    footer_legal: "Prawne",
+    footer_terms: "Warunki korzystania z usługi",
+    footer_privacy: "Polityka prywatności",
+    footer_connect: "Kontakt",
+    footer_vote: "Głosuj na Top.gg",
+    footer_copyright: "&copy; 2025 OmniTrix. Wszelkie prawa zastrzeżone.",
+  }
+};
+
+// --- LANGUAGE SWITCHER LOGIC WITH SMOOTH EFFECT ---
+function setLanguage(lang) {
+  const body = document.body;
+
+  // 1. Add class to start fade-out animation
+  body.classList.add('lang-fade');
+
+  // 2. Wait for the animation to complete
+  setTimeout(() => {
+    // Change all texts and the flag while the page is "invisible"
+    localStorage.setItem('language', lang);
+    document.documentElement.lang = lang;
+
+    const toggleImage = document.querySelector('#language-toggle img');
+    if (toggleImage) {
+      toggleImage.src = `./assets/images/${lang}.png`;
+      toggleImage.alt = `${lang} language flag`;
+    }
+
+    document.querySelectorAll('[data-translate]').forEach(element => {
+      const key = element.getAttribute('data-translate');
+      if (translations[lang] && translations[lang][key]) {
+        if (element.tagName === 'META') {
+          element.setAttribute('content', translations[lang][key]);
+        } else {
+          element.innerHTML = translations[lang][key];
+        }
+      }
+    });
+
+    // 3. Remove the class to start fade-in animation
+    body.classList.remove('lang-fade');
+  }, 300); // This time must match the transition time in CSS (0.3s = 300ms)
+}
+
+// --- MAIN SCRIPT LOGIC ---
 document.addEventListener('DOMContentLoaded', () => {
+  
+  // --- Initialize Language Toggle ---
+  const toggleButton = document.getElementById('language-toggle');
+  if (toggleButton) {
+    toggleButton.addEventListener('click', () => {
+      const currentLang = localStorage.getItem('language') || 'en';
+      const newLang = currentLang === 'en' ? 'pl' : 'en';
+      setLanguage(newLang);
+    });
+  }
+
+  // --- Initial Language Load ---
+  // Generate commands first, then set the language
+  generateCommandGroups();
+  const savedLang = localStorage.getItem('language') || 'en';
+  setLanguage(savedLang);
+
+  // --- Header Scroll Effect ---
   const header = document.querySelector('.header');
   window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
@@ -8,6 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // --- Mobile Menu ---
   const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
   const navContainer = document.querySelector('.nav-container');
   const navLinks = document.querySelectorAll('.nav-link');
@@ -15,23 +239,20 @@ document.addEventListener('DOMContentLoaded', () => {
   mobileMenuToggle.addEventListener('click', () => {
     navContainer.classList.toggle('active');
     document.body.classList.toggle('menu-open');
-
     const icon = mobileMenuToggle.querySelector('i');
-    if (navContainer.classList.contains('active')) {
-      icon.className = 'fas fa-times';
-    } else {
-      icon.className = 'fas fa-bars';
-    }
+    icon.className = navContainer.classList.contains('active') ? 'fas fa-times' : 'fas fa-bars';
   });
 
+  const closeMobileMenu = () => {
+    if (navContainer.classList.contains('active')) {
+      navContainer.classList.remove('active');
+      document.body.classList.remove('menu-open');
+      mobileMenuToggle.querySelector('i').className = 'fas fa-bars';
+    }
+  };
+
   navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      if (navContainer.classList.contains('active')) {
-        navContainer.classList.remove('active');
-        document.body.classList.remove('menu-open');
-        mobileMenuToggle.querySelector('i').className = 'fas fa-bars';
-      }
-    });
+    link.addEventListener('click', closeMobileMenu);
   });
 
   document.addEventListener('click', (e) => {
@@ -40,14 +261,13 @@ document.addEventListener('DOMContentLoaded', () => {
       !navContainer.contains(e.target) &&
       !mobileMenuToggle.contains(e.target)
     ) {
-      navContainer.classList.remove('active');
-      document.body.classList.remove('menu-open');
-      mobileMenuToggle.querySelector('i').className = 'fas fa-bars';
+      closeMobileMenu();
     }
   });
 
+  // --- Smooth Scrolling ---
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+    anchor.addEventListener('click', function (e) {
       e.preventDefault();
       const target = document.querySelector(this.getAttribute('href'));
       if (target) {
@@ -59,17 +279,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // --- Commands Section Logic ---
   const categories = document.querySelectorAll('.category');
-  let autoSwitchInterval;
   let userInteracted = false;
   let currentCategoryIndex = 0;
-
+  let animationFrameId;
+  
   function switchToCategory(categoryIndex) {
     const category = categories[categoryIndex];
-
-    if (category.classList.contains('active')) {
-      return;
-    }
+    if (!category || category.classList.contains('active')) return;
 
     categories.forEach(c => c.classList.remove('active'));
     category.classList.add('active');
@@ -77,56 +295,38 @@ document.addEventListener('DOMContentLoaded', () => {
     const activeGroup = document.querySelector('.command-group.active');
     const groupToShow = document.querySelector(`[data-group="${category.dataset.category}"]`);
 
-    if (activeGroup) {
-      const items = activeGroup.querySelectorAll('.command-item');
-      items.forEach((item, index) => {
-        setTimeout(() => {
-          item.style.opacity = '0';
-          item.style.transform = 'translateY(-20px)';
-        }, 30 * index);
-      });
-
-      setTimeout(() => {
-        document.querySelectorAll('.command-group').forEach(g => {
-          g.classList.remove('active');
+    const animateOut = (group) => {
+        if (!group) return;
+        group.querySelectorAll('.command-item').forEach((item, index) => {
+            setTimeout(() => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(-20px)';
+            }, 30 * index);
         });
-
-        if (groupToShow) {
-          groupToShow.classList.add('active');
-
-          const commandItems = groupToShow.querySelectorAll('.command-item');
-          commandItems.forEach((item, index) => {
+    };
+    
+    const animateIn = (group) => {
+        if (!group) return;
+        group.classList.add('active');
+        group.querySelectorAll('.command-item').forEach((item, index) => {
             item.style.opacity = '0';
             item.style.transform = 'translateY(20px)';
-
             setTimeout(() => {
-              item.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-              item.style.opacity = '1';
-              item.style.transform = 'translateY(0)';
-            }, 50 * index); 
-          });
-        }
-      }, 300);
-    } else {
-      document.querySelectorAll('.command-group').forEach(g => {
-        g.classList.remove('active');
-      });
-
-      if (groupToShow) {
-        groupToShow.classList.add('active');
-
-        const commandItems = groupToShow.querySelectorAll('.command-item');
-        commandItems.forEach((item, index) => {
-          item.style.opacity = '0';
-          item.style.transform = 'translateY(20px)';
-
-          setTimeout(() => {
-            item.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-            item.style.opacity = '1';
-            item.style.transform = 'translateY(0)';
-          }, 50 * index); 
+                item.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                item.style.opacity = '1';
+                item.style.transform = 'translateY(0)';
+            }, 50 * index);
         });
-      }
+    };
+
+    if (activeGroup) {
+        animateOut(activeGroup);
+        setTimeout(() => {
+            document.querySelectorAll('.command-group').forEach(g => g.classList.remove('active'));
+            animateIn(groupToShow);
+        }, 300);
+    } else {
+        animateIn(groupToShow);
     }
   }
 
@@ -139,91 +339,60 @@ document.addEventListener('DOMContentLoaded', () => {
     const elapsed = timestamp - startTime;
     const progress = Math.min(elapsed / switchInterval * 100, 100);
 
-    progressBar.style.width = `${progress}%`;
+    if (progressBar) progressBar.style.width = `${progress}%`;
 
     if (progress < 100 && !userInteracted) {
-      requestAnimationFrame(animateProgress);
+      animationFrameId = requestAnimationFrame(animateProgress);
     } else if (progress >= 100 && !userInteracted) {
-      startTime = null;
-      progressBar.style.width = '0%';
-
       currentCategoryIndex = (currentCategoryIndex + 1) % categories.length;
       switchToCategory(currentCategoryIndex);
-
-      requestAnimationFrame(animateProgress);
-    } else if (userInteracted) {
-      progressBar.style.width = '0%';
+      startAutoSwitch();
     }
   }
 
   function startAutoSwitch() {
-    if (autoSwitchInterval) {
-      clearInterval(autoSwitchInterval);
-    }
-
-    startTime = null;
-    requestAnimationFrame(animateProgress);
-
-    autoSwitchInterval = setInterval(() => {
-      if (!userInteracted) {
-        currentCategoryIndex = (currentCategoryIndex + 1) % categories.length;
-        switchToCategory(currentCategoryIndex);
-
+    if (animationFrameId) cancelAnimationFrame(animationFrameId);
+    if (progressBar) {
+        progressBar.style.transition = 'none';
         progressBar.style.width = '0%';
+    }
+    
+    setTimeout(() => {
+        if(progressBar) progressBar.style.transition = '';
         startTime = null;
-      }
-    }, switchInterval);
+        userInteracted = false;
+        animationFrameId = requestAnimationFrame(animateProgress);
+    }, 50);
   }
 
   categories.forEach((category, index) => {
     category.addEventListener('click', () => {
       userInteracted = true;
+      if (animationFrameId) cancelAnimationFrame(animationFrameId);
       currentCategoryIndex = index;
-
-      progressBar.style.width = '0%';
-
       switchToCategory(index);
-
-      setTimeout(() => {
-        userInteracted = false;
-        requestAnimationFrame(function(timestamp) {
-          startTime = timestamp;
-          animateProgress(timestamp);
-        });
-      }, 10000);
+      if (progressBar) progressBar.style.width = '0%';
     });
   });
 
   const commandsSection = document.querySelector('.commands');
-  commandsSection.addEventListener('mousemove', () => {
-    userInteracted = true;
-
-    progressBar.style.width = '0%';
-
-    clearTimeout(commandsSection.mouseMoveTimeout);
-    commandsSection.mouseMoveTimeout = setTimeout(() => {
-      userInteracted = false;
-      requestAnimationFrame(function(timestamp) {
-        startTime = timestamp;
-        animateProgress(timestamp);
+  if (commandsSection) {
+      commandsSection.addEventListener('mouseenter', () => {
+        userInteracted = true;
+        if (animationFrameId) cancelAnimationFrame(animationFrameId);
+        if (progressBar) progressBar.style.width = '0%';
       });
-    }, 10000);
-  });
+  }
 
-  generateCommandGroups();
-
-  generateIconGrid();
-
+  // --- Initial Animations and Setup ---
   initAnimations();
-
+  
   setTimeout(() => {
     const activeGroup = document.querySelector('.command-group.active');
     if (activeGroup) {
-      const commandItems = activeGroup.querySelectorAll('.command-item');
-      commandItems.forEach((item, index) => {
+      activeGroup.querySelectorAll('.command-item').forEach((item, index) => {
         item.style.opacity = '0';
         item.style.transform = 'translateY(20px)';
-
         setTimeout(() => {
           item.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
           item.style.opacity = '1';
@@ -231,15 +400,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 50 * index);
       });
     }
-
     startAutoSwitch();
   }, 500);
 });
 
+// --- HELPER FUNCTIONS ---
+
 function generateCommandGroups() {
   const commandList = document.querySelector('.command-list');
+  if (!commandList) return;
 
-  const musicCommands = `
+  const adminCommands = `
     <div class="command-group active" data-group="Administration">
       <h3 class="command-category-title"><i class="fa-solid fa-shield-halved"></i> Administration Commands</h3>
       <div class="command-category-list">
@@ -290,7 +461,7 @@ function generateCommandGroups() {
       </div>
     </div>
   `;
-  const playlistCommands = `
+  const funCommands = `
     <div class="command-group" data-group="fun">
       <h3 class="command-category-title"><i class="fa-solid fa-face-smile"></i> Fun Commands</h3>
       <div class="command-category-list">
@@ -366,117 +537,83 @@ function generateCommandGroups() {
     </div>
   `;
 
-  commandList.innerHTML = musicCommands + playlistCommands + utilityCommands;
-}
-
-function generateIconGrid() {
-  const iconsContainer = document.querySelector('.icons-container');
-
-  const icons = [
-    { name: 'play', icon: 'fas fa-play' },
-    { name: 'pause', icon: 'fas fa-pause' },
-    { name: 'skip', icon: 'fas fa-forward' },
-    { name: 'previous', icon: 'fas fa-backward' },
-    { name: 'stop', icon: 'fas fa-stop' },
-    { name: 'loop', icon: 'fas fa-redo' },
-    { name: 'shuffle', icon: 'fas fa-random' },
-    { name: 'volume', icon: 'fas fa-volume-up' },
-    { name: 'mute', icon: 'fas fa-volume-mute' },
-    { name: 'playlist', icon: 'fas fa-list' },
-    { name: 'lyrics', icon: 'fas fa-file-alt' },
-    { name: 'filter', icon: 'fas fa-sliders-h' },
-    { name: 'spotify', icon: 'fab fa-spotify' },
-    { name: 'youtube', icon: 'fab fa-youtube' },
-    { name: 'soundcloud', icon: 'fab fa-soundcloud' },
-    { name: 'deezer', icon: 'fas fa-music' },
-    { name: 'apple', icon: 'fab fa-apple' },
-    { name: 'radio', icon: 'fas fa-broadcast-tower' },
-    { name: '24/7', icon: 'fas fa-clock' },
-    { name: 'queue', icon: 'fas fa-stream' },
-    { name: 'search', icon: 'fas fa-search' },
-    { name: 'grab', icon: 'fas fa-download' },
-    { name: 'vote', icon: 'fas fa-vote-yea' },
-    { name: 'premium', icon: 'fas fa-crown' },
-    { name: 'support', icon: 'fas fa-headset' },
-    { name: 'invite', icon: 'fas fa-user-plus' },
-    { name: 'help', icon: 'fas fa-question-circle' },
-    { name: 'settings', icon: 'fas fa-cog' },
-    { name: 'bassboost', icon: 'fas fa-volume-down' },
-    { name: 'nightcore', icon: 'fas fa-moon' },
-    { name: 'karaoke', icon: 'fas fa-microphone' },
-    { name: 'vaporwave', icon: 'fas fa-water' },
-    { name: 'equalizer', icon: 'fas fa-sliders-h' },
-    { name: 'volume_up', icon: 'fas fa-volume-up' },
-    { name: 'volume_down', icon: 'fas fa-volume-down' },
-    { name: 'discord', icon: 'fab fa-discord' },
-    { name: 'heart', icon: 'fas fa-heart' },
-    { name: 'star', icon: 'fas fa-star' },
-    { name: 'fire', icon: 'fas fa-fire' },
-    { name: 'bolt', icon: 'fas fa-bolt' },
-  ];
-
-  let iconsHTML = '';
-  icons.forEach(icon => {
-    iconsHTML += `
-      <div class="icon-item" data-name="${icon.name}" title="${icon.name}">
-        <span><i class="${icon.icon}"></i></span>
-      </div>
-    `;
-  });
-
-  iconsContainer.innerHTML = iconsHTML;
-
-  const iconItems = document.querySelectorAll('.icon-item');
-  iconItems.forEach(item => {
-    const randomDelay = Math.random() * 2;
-    item.style.animationDelay = `${randomDelay}s`;
-
-    item.addEventListener('mouseenter', () => {
-      const ripple = document.createElement('span');
-      ripple.className = 'ripple';
-      item.appendChild(ripple);
-
-      item.classList.add('glow');
-
-      setTimeout(() => {
-        ripple.remove();
-        item.classList.remove('glow');
-      }, 1000);
-    });
-  });
+  commandList.innerHTML = adminCommands + funCommands + utilityCommands;
 }
 
 function initAnimations() {
   const animateOnScroll = () => {
     const elements = document.querySelectorAll('.feature-card, .pricing-card, .support-card');
-
     elements.forEach(element => {
       const elementTop = element.getBoundingClientRect().top;
       const elementBottom = element.getBoundingClientRect().bottom;
-
       if (elementTop < window.innerHeight && elementBottom > 0) {
         element.classList.add('animate');
       }
     });
   };
-
   animateOnScroll();
-
   window.addEventListener('scroll', animateOnScroll);
 }
+// --- LOGIKA MODALU POLITYKI PRYWATNOŚCI ---
 
-function handleSpotifyAuth() {
-  const callbackElement = document.getElementById('spotify-callback');
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('privacy-modal');
+  const openBtn = document.getElementById('open-privacy');
+  const closeBtn = document.getElementById('close-modal');
+  const contentContainer = document.getElementById('privacy-content');
 
-  const urlParams = new URLSearchParams(window.location.search);
-  const code = urlParams.get('code');
+  // Funkcja do otwierania modalu i wczytywania treści
+  const openModal = () => {
+    // Pokaż "ładowanie...", jeśli treść nie została jeszcze wczytana
+    if (contentContainer.innerHTML.trim() === "") {
+      contentContainer.innerHTML = '<p>Ładowanie...</p>';
 
-  if (code) {
-    callbackElement.innerHTML = `<p>Authentication successful You can close this window.</p>`;
-    callbackElement.style.display = 'block';
+      // Użyj funkcji fetch, aby pobrać zawartość pliku privacy.html
+      fetch('privacy.html')
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Nie udało się wczytać pliku.');
+          }
+          return response.text();
+        })
+        .then(html => {
+          // Wczytaj pobrany tekst jako dokument HTML
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(html, 'text/html');
+          
+          // Wyciągnij tylko zawartość tagu <body> z pliku
+          const bodyContent = doc.body.innerHTML;
+          contentContainer.innerHTML = bodyContent;
+        })
+        .catch(error => {
+          console.error('Błąd:', error);
+          contentContainer.innerHTML = '<p>Wystąpił błąd podczas ładowania treści. Spróbuj ponownie później.</p>';
+        });
+    }
+    modal.style.display = 'block';
+  };
 
-    setTimeout(() => {
-      callbackElement.style.display = 'none';
-    }, 5000);
+  // Funkcja do zamykania modalu
+  const closeModal = () => {
+    modal.style.display = 'none';
+  };
+
+  // Nasłuchiwanie na kliknięcia
+  if (openBtn) {
+    openBtn.addEventListener('click', (e) => {
+      e.preventDefault(); // Zapobiegaj przejściu do "#" w URL
+      openModal();
+    });
   }
-}
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeModal);
+  }
+
+  // Zamykanie modalu po kliknięciu w tło
+  window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+});
