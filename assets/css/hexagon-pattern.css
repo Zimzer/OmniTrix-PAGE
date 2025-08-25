@@ -23,7 +23,7 @@
   position: relative;
   width: 60px;
   height: 60px;
-  background-color: rgba(255, 255, 255, 0.02);
+  background-color: rgba(88, 101, 242, 0.02);
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   transition: all 0.3s ease;
   display: flex;
