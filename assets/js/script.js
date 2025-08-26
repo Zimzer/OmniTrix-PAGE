@@ -65,6 +65,7 @@ const translations = {
     cmd_reps_desc: "Check reputation",
     cmd_repleaderboard_desc: "Reputation ranking on this server",
     cmd_invite_desc: "Link to invite the bot to other servers",
+    cmd_prop_desc: "Report the introduction of a function or feature",
     // Community Section
     community_title: "Join Our Community",
     community_subtitle: "Get help, share feedback, and connect with other server owners",
@@ -157,6 +158,7 @@ const translations = {
     cmd_reps_desc: "Sprawdza reputację",
     cmd_repleaderboard_desc: "Ranking reputacji na tym serwerze",
     cmd_invite_desc: "Link do zaproszenia bota na inne serwery",
+    cmd_prop_desc: "Zgłoś propozycję dodania komendy lub funkcji",
     // Community Section
     community_title: "Dołącz do Naszej Społeczności",
     community_subtitle: "Uzyskaj pomoc, podziel się opinią i połącz się z innymi właścicielami serwerów",
@@ -568,6 +570,9 @@ function generateCommandGroups() {
           <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>invite</div>
           <div class="command-description" data-translate="cmd_invite_desc">Link to invite the bot to other servers</div>
         </div>
+        <div class="command-item">
+          <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>prop</div>
+          <div class="command-description" data-translate="cmd_prop_desc">Link to invite the bot to other servers</div>
       </div>
     </div>
   `;
