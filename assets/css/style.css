@@ -4,7 +4,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 :root {
   /* Colors - Blue theme to match Discord */
   --primary: #515ef39a;
@@ -61,7 +60,6 @@
 }
 
 html {
-  font-size: 16px;
   scroll-behavior: smooth;
 }
 
