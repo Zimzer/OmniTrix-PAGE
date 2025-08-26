@@ -82,6 +82,16 @@ const translations = {
     footer_connect: "Connect",
     footer_vote: "Vote on Top.gg",
     footer_copyright: "&copy; 2025 OmniTrix. All rights reserved.",
+    // Terms of Service Page
+    terms_title: "Terms of Service",
+    terms_subtitle: "Please read these terms carefully before using OmniTrix",
+    terms_header: "Terms of Service",
+    terms_p1: "Welcome to OmniTrix! These Terms of Service ('Terms') govern your access to and use of the OmniTrix Discord music bot ('Bot'), website, and related services (collectively, the 'Services'). By using our Services, you agree to be bound by these Terms.",
+    // Privacy Policy Page
+    privacy_title: "Privacy Policy",
+    privacy_subtitle: "How we collect, use, and protect your information",
+    privacy_header: "Privacy Policy",
+    privacy_p1: "At OmniTrix, we take your privacy seriously. This Privacy Policy explains how we collect, use, and protect your personal information when you use our Discord music bot ('Bot'), website, and related services (collectively, the 'Services')."
   },
   pl: {
     // Meta Tags
@@ -164,6 +174,16 @@ const translations = {
     footer_connect: "Kontakt",
     footer_vote: "Głosuj na Top.gg",
     footer_copyright: "&copy; 2025 OmniTrix. Wszelkie prawa zastrzeżone.",
+    // Terms of Service Page
+    terms_title: "Warunki korzystania z usługi",
+    terms_subtitle: "Przeczytaj uważnie te warunki przed użyciem OmniTrix",
+    terms_header: "Warunki korzystania z usługi",
+    terms_p1: "Witaj w OmniTrix! Niniejsze Warunki korzystania z usługi ('Warunki') regulują dostęp i korzystanie z bota muzycznego OmniTrix na Discordzie ('Bot'), strony internetowej i powiązanych usług (łącznie 'Usługi'). Korzystając z naszych Usług, zgadzasz się na przestrzeganie niniejszych Warunków.",
+    // Privacy Policy Page
+    privacy_title: "Polityka Prywatności",
+    privacy_subtitle: "Jak zbieramy, używamy i chronimy Twoje informacje",
+    privacy_header: "Polityka Prywatności",
+    privacy_p1: "W OmniTrix poważnie podchodzimy do Twojej prywatności. Niniejsza Polityka Prywatności wyjaśnia, jak zbieramy, używamy i chronimy Twoje dane osobowe, gdy korzystasz z naszego bota muzycznego na Discordzie ('Bot'), strony internetowej i powiązanych usług (łącznie 'Usługi')."
   }
 };
 
@@ -189,8 +209,13 @@ function setLanguage(lang) {
     document.querySelectorAll('[data-translate]').forEach(element => {
       const key = element.getAttribute('data-translate');
       if (translations[lang] && translations[lang][key]) {
-        if (element.tagName === 'META') {
-          element.setAttribute('content', translations[lang][key]);
+        if (element.tagName === 'META' || element.tagName === 'TITLE') {
+          // For meta tags, update 'content'. For title, update 'textContent'.
+          if (element.hasAttribute('content')) {
+            element.setAttribute('content', translations[lang][key]);
+          } else {
+            element.textContent = translations[lang][key];
+          }
         } else {
           element.innerHTML = translations[lang][key];
         }
@@ -216,8 +241,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --- Initial Language Load ---
-  // Generate commands first, then set the language
-  generateCommandGroups();
+  // Generate commands first (if on index page), then set the language
+  if (document.querySelector('.command-list')) {
+      generateCommandGroups();
+  }
   const savedLang = localStorage.getItem('language') || 'en';
   setLanguage(savedLang);
 
@@ -236,18 +263,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const navContainer = document.querySelector('.nav-container');
   const navLinks = document.querySelectorAll('.nav-link');
 
-  mobileMenuToggle.addEventListener('click', () => {
-    navContainer.classList.toggle('active');
-    document.body.classList.toggle('menu-open');
-    const icon = mobileMenuToggle.querySelector('i');
-    icon.className = navContainer.classList.contains('active') ? 'fas fa-times' : 'fas fa-bars';
-  });
+  if(mobileMenuToggle && navContainer){
+    mobileMenuToggle.addEventListener('click', () => {
+      navContainer.classList.toggle('active');
+      document.body.classList.toggle('menu-open');
+      const icon = mobileMenuToggle.querySelector('i');
+      icon.className = navContainer.classList.contains('active') ? 'fas fa-times' : 'fas fa-bars';
+    });
+  }
 
   const closeMobileMenu = () => {
-    if (navContainer.classList.contains('active')) {
+    if (navContainer && navContainer.classList.contains('active')) {
       navContainer.classList.remove('active');
       document.body.classList.remove('menu-open');
-      mobileMenuToggle.querySelector('i').className = 'fas fa-bars';
+      if(mobileMenuToggle) mobileMenuToggle.querySelector('i').className = 'fas fa-bars';
     }
   };
 
@@ -257,9 +286,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.addEventListener('click', (e) => {
     if (
-      navContainer.classList.contains('active') &&
+      navContainer && navContainer.classList.contains('active') &&
       !navContainer.contains(e.target) &&
-      !mobileMenuToggle.contains(e.target)
+      mobileMenuToggle && !mobileMenuToggle.contains(e.target)
     ) {
       closeMobileMenu();
     }
@@ -280,128 +309,129 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // --- Commands Section Logic ---
-  const categories = document.querySelectorAll('.category');
-  let userInteracted = false;
-  let currentCategoryIndex = 0;
-  let animationFrameId;
-  
-  function switchToCategory(categoryIndex) {
-    const category = categories[categoryIndex];
-    if (!category || category.classList.contains('active')) return;
-
-    categories.forEach(c => c.classList.remove('active'));
-    category.classList.add('active');
-
-    const activeGroup = document.querySelector('.command-group.active');
-    const groupToShow = document.querySelector(`[data-group="${category.dataset.category}"]`);
-
-    const animateOut = (group) => {
-        if (!group) return;
-        group.querySelectorAll('.command-item').forEach((item, index) => {
-            setTimeout(() => {
-                item.style.opacity = '0';
-                item.style.transform = 'translateY(-20px)';
-            }, 30 * index);
-        });
-    };
-    
-    const animateIn = (group) => {
-        if (!group) return;
-        group.classList.add('active');
-        group.querySelectorAll('.command-item').forEach((item, index) => {
-            item.style.opacity = '0';
-            item.style.transform = 'translateY(20px)';
-            setTimeout(() => {
-                item.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-                item.style.opacity = '1';
-                item.style.transform = 'translateY(0)';
-            }, 50 * index);
-        });
-    };
-
-    if (activeGroup) {
-        animateOut(activeGroup);
-        setTimeout(() => {
-            document.querySelectorAll('.command-group').forEach(g => g.classList.remove('active'));
-            animateIn(groupToShow);
-        }, 300);
-    } else {
-        animateIn(groupToShow);
-    }
-  }
-
-  const progressBar = document.querySelector('.category-progress');
-  const switchInterval = 5000;
-  let startTime;
-
-  function animateProgress(timestamp) {
-    if (!startTime) startTime = timestamp;
-    const elapsed = timestamp - startTime;
-    const progress = Math.min(elapsed / switchInterval * 100, 100);
-
-    if (progressBar) progressBar.style.width = `${progress}%`;
-
-    if (progress < 100 && !userInteracted) {
-      animationFrameId = requestAnimationFrame(animateProgress);
-    } else if (progress >= 100 && !userInteracted) {
-      currentCategoryIndex = (currentCategoryIndex + 1) % categories.length;
-      switchToCategory(currentCategoryIndex);
-      startAutoSwitch();
-    }
-  }
-
-  function startAutoSwitch() {
-    if (animationFrameId) cancelAnimationFrame(animationFrameId);
-    if (progressBar) {
-        progressBar.style.transition = 'none';
-        progressBar.style.width = '0%';
-    }
-    
-    setTimeout(() => {
-        if(progressBar) progressBar.style.transition = '';
-        startTime = null;
-        userInteracted = false;
-        animationFrameId = requestAnimationFrame(animateProgress);
-    }, 50);
-  }
-
-  categories.forEach((category, index) => {
-    category.addEventListener('click', () => {
-      userInteracted = true;
-      if (animationFrameId) cancelAnimationFrame(animationFrameId);
-      currentCategoryIndex = index;
-      switchToCategory(index);
-      if (progressBar) progressBar.style.width = '0%';
-    });
-  });
-
   const commandsSection = document.querySelector('.commands');
-  if (commandsSection) {
-      commandsSection.addEventListener('mouseenter', () => {
+  if(commandsSection) {
+    const categories = document.querySelectorAll('.category');
+    let userInteracted = false;
+    let currentCategoryIndex = 0;
+    let animationFrameId;
+    
+    function switchToCategory(categoryIndex) {
+      const category = categories[categoryIndex];
+      if (!category || category.classList.contains('active')) return;
+
+      categories.forEach(c => c.classList.remove('active'));
+      category.classList.add('active');
+
+      const activeGroup = document.querySelector('.command-group.active');
+      const groupToShow = document.querySelector(`[data-group="${category.dataset.category}"]`);
+
+      const animateOut = (group) => {
+          if (!group) return;
+          group.querySelectorAll('.command-item').forEach((item, index) => {
+              setTimeout(() => {
+                  item.style.opacity = '0';
+                  item.style.transform = 'translateY(-20px)';
+              }, 30 * index);
+          });
+      };
+      
+      const animateIn = (group) => {
+          if (!group) return;
+          group.classList.add('active');
+          group.querySelectorAll('.command-item').forEach((item, index) => {
+              item.style.opacity = '0';
+              item.style.transform = 'translateY(20px)';
+              setTimeout(() => {
+                  item.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                  item.style.opacity = '1';
+                  item.style.transform = 'translateY(0)';
+              }, 50 * index);
+          });
+      };
+
+      if (activeGroup) {
+          animateOut(activeGroup);
+          setTimeout(() => {
+              document.querySelectorAll('.command-group').forEach(g => g.classList.remove('active'));
+              animateIn(groupToShow);
+          }, 300);
+      } else {
+          animateIn(groupToShow);
+      }
+    }
+
+    const progressBar = document.querySelector('.category-progress');
+    const switchInterval = 5000;
+    let startTime;
+
+    function animateProgress(timestamp) {
+      if (!startTime) startTime = timestamp;
+      const elapsed = timestamp - startTime;
+      const progress = Math.min(elapsed / switchInterval * 100, 100);
+
+      if (progressBar) progressBar.style.width = `${progress}%`;
+
+      if (progress < 100 && !userInteracted) {
+        animationFrameId = requestAnimationFrame(animateProgress);
+      } else if (progress >= 100 && !userInteracted) {
+        currentCategoryIndex = (currentCategoryIndex + 1) % categories.length;
+        switchToCategory(currentCategoryIndex);
+        startAutoSwitch();
+      }
+    }
+
+    function startAutoSwitch() {
+      if (animationFrameId) cancelAnimationFrame(animationFrameId);
+      if (progressBar) {
+          progressBar.style.transition = 'none';
+          progressBar.style.width = '0%';
+      }
+      
+      setTimeout(() => {
+          if(progressBar) progressBar.style.transition = '';
+          startTime = null;
+          userInteracted = false;
+          animationFrameId = requestAnimationFrame(animateProgress);
+      }, 50);
+    }
+
+    categories.forEach((category, index) => {
+      category.addEventListener('click', () => {
         userInteracted = true;
         if (animationFrameId) cancelAnimationFrame(animationFrameId);
+        currentCategoryIndex = index;
+        switchToCategory(index);
         if (progressBar) progressBar.style.width = '0%';
       });
+    });
+
+    commandsSection.addEventListener('mouseenter', () => {
+      userInteracted = true;
+      if (animationFrameId) cancelAnimationFrame(animationFrameId);
+      if (progressBar) progressBar.style.width = '0%';
+    });
+
+    // --- Initial Command Animations ---
+    setTimeout(() => {
+      const activeGroup = document.querySelector('.command-group.active');
+      if (activeGroup) {
+        activeGroup.querySelectorAll('.command-item').forEach((item, index) => {
+          item.style.opacity = '0';
+          item.style.transform = 'translateY(20px)';
+          setTimeout(() => {
+            item.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+            item.style.opacity = '1';
+            item.style.transform = 'translateY(0)';
+          }, 50 * index);
+        });
+      }
+      startAutoSwitch();
+    }, 500);
   }
 
-  // --- Initial Animations and Setup ---
+  // --- General Initial Animations ---
   initAnimations();
-  
-  setTimeout(() => {
-    const activeGroup = document.querySelector('.command-group.active');
-    if (activeGroup) {
-      activeGroup.querySelectorAll('.command-item').forEach((item, index) => {
-        item.style.opacity = '0';
-        item.style.transform = 'translateY(20px)';
-        setTimeout(() => {
-          item.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-          item.style.opacity = '1';
-          item.style.transform = 'translateY(0)';
-        }, 50 * index);
-      });
-    }
-    startAutoSwitch();
-  }, 500);
 });
 
 // --- HELPER FUNCTIONS ---
@@ -554,66 +584,3 @@ function initAnimations() {
   animateOnScroll();
   window.addEventListener('scroll', animateOnScroll);
 }
-// --- LOGIKA MODALU POLITYKI PRYWATNOŚCI ---
-
-document.addEventListener('DOMContentLoaded', () => {
-  const modal = document.getElementById('privacy-modal');
-  const openBtn = document.getElementById('open-privacy');
-  const closeBtn = document.getElementById('close-modal');
-  const contentContainer = document.getElementById('privacy-content');
-
-  // Funkcja do otwierania modalu i wczytywania treści
-  const openModal = () => {
-    // Pokaż "ładowanie...", jeśli treść nie została jeszcze wczytana
-    if (contentContainer.innerHTML.trim() === "") {
-      contentContainer.innerHTML = '<p>Ładowanie...</p>';
-
-      // Użyj funkcji fetch, aby pobrać zawartość pliku privacy.html
-      fetch('privacy.html')
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('Nie udało się wczytać pliku.');
-          }
-          return response.text();
-        })
-        .then(html => {
-          // Wczytaj pobrany tekst jako dokument HTML
-          const parser = new DOMParser();
-          const doc = parser.parseFromString(html, 'text/html');
-          
-          // Wyciągnij tylko zawartość tagu <body> z pliku
-          const bodyContent = doc.body.innerHTML;
-          contentContainer.innerHTML = bodyContent;
-        })
-        .catch(error => {
-          console.error('Błąd:', error);
-          contentContainer.innerHTML = '<p>Wystąpił błąd podczas ładowania treści. Spróbuj ponownie później.</p>';
-        });
-    }
-    modal.style.display = 'block';
-  };
-
-  // Funkcja do zamykania modalu
-  const closeModal = () => {
-    modal.style.display = 'none';
-  };
-
-  // Nasłuchiwanie na kliknięcia
-  if (openBtn) {
-    openBtn.addEventListener('click', (e) => {
-      e.preventDefault(); // Zapobiegaj przejściu do "#" w URL
-      openModal();
-    });
-  }
-
-  if (closeBtn) {
-    closeBtn.addEventListener('click', closeModal);
-  }
-
-  // Zamykanie modalu po kliknięciu w tło
-  window.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      closeModal();
-    }
-  });
-});
