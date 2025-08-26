@@ -202,7 +202,12 @@ function setLanguage(lang) {
 
     const toggleImage = document.querySelector('#language-toggle img');
     if (toggleImage) {
-      toggleImage.src = `../assets/images/${lang}.png`;
+      // Corrected path for nested pages like /terms/
+      let pathPrefix = './';
+      if (window.location.pathname.includes('/terms/') || window.location.pathname.includes('/privacy/')) {
+        pathPrefix = '../';
+      }
+      toggleImage.src = `${pathPrefix}assets/images/${lang}.png`;
       toggleImage.alt = `${lang} language flag`;
     }
 
@@ -442,78 +447,78 @@ function generateCommandGroups() {
 
   const adminCommands = `
     <div class="command-group active" data-group="Administration">
-      <h3 class="command-category-title"><i class="fa-solid fa-shield-halved"></i> Administration Commands</h3>
+      <h3 class="command-category-title"><i class="fa-solid fa-shield-halved"></i> <span data-translate="cmd_admin_title">Administration Commands</span></h3>
       <div class="command-category-list">
         <div class="command-item">
           <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>ban</div>
-          <div class="command-description">Bans a user from the server</div>
+          <div class="command-description" data-translate="cmd_ban_desc">Bans a user from the server</div>
         </div>
         <div class="command-item">
           <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>unban</div>
-          <div class="command-description">Unbans a user by ID</div>
+          <div class="command-description" data-translate="cmd_unban_desc">Unbans a user by ID</div>
         </div>
         <div class="command-item">
           <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>kick</div>
-          <div class="command-description">Kicks the user from the server</div>
+          <div class="command-description" data-translate="cmd_kick_desc">Kicks the user from the server</div>
         </div>
         <div class="command-item">
           <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>mute</div>
-          <div class="command-description">Mute a user for a specific period of time or permanently</div>
+          <div class="command-description" data-translate="cmd_mute_desc">Mute a user for a specific period of time or permanently</div>
         </div>
         <div class="command-item">
           <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>unmute</div>
-          <div class="command-description">Unmute a user</div>
+          <div class="command-description" data-translate="cmd_unmute_desc">Unmute a user</div>
         </div>
         <div class="command-item">
           <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>clear</div>
-          <div class="command-description">Deletes messages from the channel</div>
+          <div class="command-description" data-translate="cmd_clear_desc">Deletes messages from the channel</div>
         </div>
         <div class="command-item">
           <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>listbans</div>
-          <div class="command-description">Shows a list of all bans</div>
+          <div class="command-description" data-translate="cmd_listbans_desc">Shows a list of all bans</div>
         </div>
         <div class="command-item">
           <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>nuke</div>
-          <div class="command-description">Creates a fresh channel with the same settings</div>
+          <div class="command-description" data-translate="cmd_nuke_desc">Creates a fresh channel with the same settings</div>
         </div>
         <div class="command-item">
           <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>slowmode</div>
-          <div class="command-description">Sets the time between sending messages</div>
+          <div class="command-description" data-translate="cmd_slowmode_desc">Sets the time between sending messages</div>
         </div>
         <div class="command-item">
           <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>represet</div>
-          <div class="command-description">Resets reputation on this server</div>
+          <div class="command-description" data-translate="cmd_represet_desc">Resets reputation on this server</div>
         </div>
         <div class="command-item">
           <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>setlang</div>
-          <div class="command-description">Set the bot language on the server</div>
+          <div class="command-description" data-translate="cmd_setlang_desc">Set the bot language on the server</div>
         </div>
       </div>
     </div>
   `;
   const funCommands = `
     <div class="command-group" data-group="fun">
-      <h3 class="command-category-title"><i class="fa-solid fa-face-smile"></i> Fun Commands</h3>
+      <h3 class="command-category-title"><i class="fa-solid fa-face-smile"></i> <span data-translate="cmd_fun_title">Fun Commands</span></h3>
       <div class="command-category-list">
         <div class="command-item">
           <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>cat</div>
-          <div class="command-description">Sends a random cat</div>
+          <div class="command-description" data-translate="cmd_cat_desc">Sends a random cat</div>
         </div>
         <div class="command-item">
           <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>dog</div>
-          <div class="command-description">Sends a random dog</div>
+          <div class="command-description" data-translate="cmd_dog_desc">Sends a random dog</div>
         </div>
         <div class="command-item">
           <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>8ball</div>
-          <div class="command-description">Random answer to a question</div>
+          <div class="command-description" data-translate="cmd_8ball_desc">Random answer to a question</div>
         </div>
         <div class="command-item">
           <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>math</div>
-          <div class="command-description">Calculates a mathematical operation</div>
+          <div class="command-description" data-translate="cmd_math_desc">Calculates a mathematical operation</div>
         </div>
         <div class="command-item">
           <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>minecraft-status</div>
-          <div class="command-description">Check the status of a Minecraft server</div>
+          <div class="command-description" data-translate="cmd_mcstatus_desc">Check the status of a Minecraft server</div>
         </div>
       </div>
     </div>
@@ -521,47 +526,47 @@ function generateCommandGroups() {
 
   const utilityCommands = `
     <div class="command-group" data-group="Utility">
-      <h3 class="command-category-title"><i class="fas fa-tools"></i> Utility Commands</h3>
+      <h3 class="command-category-title"><i class="fas fa-tools"></i> <span data-translate="cmd_utility_title">Utility Commands</span></h3>
       <div class="command-category-list">
         <div class="command-item">
           <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>help</div>
-          <div class="command-description">Show all available commands</div>
+          <div class="command-description" data-translate="cmd_help_desc">Show all available commands</div>
         </div>
         <div class="command-item">
           <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>ping</div>
-          <div class="command-description">Check bot's response time</div>
+          <div class="command-description" data-translate="cmd_ping_desc">Check bot's response time</div>
         </div>
         <div class="command-item">
           <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>avatar</div>
-          <div class="command-description">Get bot invite link</div>
+          <div class="command-description" data-translate="cmd_avatar_desc">Get user's avatar</div>
         </div>
         <div class="command-item">
           <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>userinfo</div>
-          <div class="command-description">Get support server link</div>
+          <div class="command-description" data-translate="cmd_userinfo_desc">Get information about a user</div>
         </div>
         <div class="command-item">
           <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>serverinfo</div>
-          <div class="command-description">Displays information about the server</div>
+          <div class="command-description" data-translate="cmd_serverinfo_desc">Displays information about the server</div>
         </div>
         <div class="command-item">
           <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>weather</div>
-          <div class="command-description">Displays current weather information in a given city or country</div>
+          <div class="command-description" data-translate="cmd_weather_desc">Displays current weather information in a given city or country</div>
         </div>
         <div class="command-item">
           <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>rep</div>
-          <div class="command-description">Give a reputation point to a user</div>
+          <div class="command-description" data-translate="cmd_rep_desc">Give a reputation point to a user</div>
         </div>
         <div class="command-item">
           <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>reps</div>
-          <div class="command-description">Check reputation</div>
+          <div class="command-description" data-translate="cmd_reps_desc">Check reputation</div>
         </div>
         <div class="command-item">
           <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>repleaderboard</div>
-          <div class="command-description">Reputation ranking on this server</div>
+          <div class="command-description" data-translate="cmd_repleaderboard_desc">Reputation ranking on this server</div>
         </div>
         <div class="command-item">
           <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>invite</div>
-          <div class="command-description">Link to invite the bot to other servers</div>
+          <div class="command-description" data-translate="cmd_invite_desc">Link to invite the bot to other servers</div>
         </div>
       </div>
     </div>
@@ -569,6 +574,7 @@ function generateCommandGroups() {
 
   commandList.innerHTML = adminCommands + funCommands + utilityCommands;
 }
+
 
 function initAnimations() {
   const animateOnScroll = () => {
