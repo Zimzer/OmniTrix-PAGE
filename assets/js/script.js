@@ -202,7 +202,7 @@ function setLanguage(lang) {
 
     const toggleImage = document.querySelector('#language-toggle img');
     if (toggleImage) {
-      toggleImage.src = `./assets/images/${lang}.png`;
+      toggleImage.src = `../assets/images/${lang}.png`;
       toggleImage.alt = `${lang} language flag`;
     }
 
