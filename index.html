@@ -65,11 +65,14 @@
           <h1>OmniTrix</h1>
         </a>
         <div class="mobile-menu-toggle">
-          <i class="fas fa-bars"></i>
+            <i class="fas fa-bars"></i>
         </div>
         <div class="nav-container">
-          <nav class="nav">
-            <ul class="nav-list">
+
+        <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-container">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="nav-container" id="nav-container">
               <li><a href="#features" class="nav-link" data-translate="nav_features">Features</a></li>
               <li><a href="#commands" class="nav-link" data-translate="nav_commands">Commands</a></li>
               <li><a href="#support" class="nav-link" data-translate="nav_support">Support</a></li>
@@ -155,7 +158,7 @@
     </div>
   </section>
 
-  <section class="commands" id="commands"><i class="fa-solid fa-face-smile"></i>
+  <section class="commands" id="commands"><i class="fa-solid fa-face-smile">
     <div class="container">
       <div class="section-header">
         <h2 class="section-title" data-translate="commands_title">Flexible Controls & Commands</h2>
@@ -252,14 +255,6 @@
   
   <script>
     document.addEventListener("contextmenu", (e) => e.preventDefault());
-    document.addEventListener("keydown", function (e) {
-      if (e.ctrlKey && (e.key === "u" || e.key === "s" || e.key === "c" || e.key === "U" || e.key === "S" || e.key === "C")) {
-        e.preventDefault();
-      }
-      if ((e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "i")) || e.key === "F12") {
-        e.preventDefault();
-      }
-    });
   </script>
 </body>
 </html>
