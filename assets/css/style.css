@@ -1114,28 +1114,3 @@ section {
     font-size: 1.2rem;
   }
 }
-/* --- HERO FIXY --- */
-@media (max-width: 992px) {
-  .hero {
-    padding-top: 160px; /* dodajemy odstęp, żeby header nie zasłaniał */
-  }
-}
-
-@media (max-width: 768px) {
-  .hero {
-    padding-top: 140px; /* jeszcze więcej miejsca na mniejszych ekranach */
-  }
-  .hero-title {
-    font-size: 1.8rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero {
-    padding-top: 120px; /* najmniejsze ekrany */
-  }
-  .hero-title {
-    font-size: 1.6rem;
-  }
-}
-
