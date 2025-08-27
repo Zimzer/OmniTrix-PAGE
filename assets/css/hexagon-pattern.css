@@ -210,3 +210,43 @@
     display: none; /* całkowicie wyłączone na telefonach */
   }
 }
+/* --- RESPONSYWNE HEXY (delikatniejsze / wyłączone na mobile) --- */
+@media (max-width: 992px) {
+  .hexagon-pattern {
+    grid-template-columns: repeat(auto-fill, 50px);
+    grid-gap: 10px;
+  }
+  .hexagon { width: 50px; height: 50px; }
+  #heroPattern {
+    opacity: 0.3;
+    width: 150%;
+    height: 120%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hexagon-pattern {
+    grid-template-columns: repeat(auto-fill, 40px);
+    grid-gap: 8px;
+  }
+  .hexagon { width: 40px; height: 40px; }
+  #heroPattern {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.18;
+    transform: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .hexagon-pattern {
+    grid-template-columns: repeat(auto-fill, 30px);
+    grid-gap: 6px;
+  }
+  .hexagon { width: 30px; height: 30px; }
+  .hexagon-pattern-container { opacity: 0.25; pointer-events: none; }
+  #heroPattern { display: none; } /* usuń ciężkie tło na telefonach */
+}
+

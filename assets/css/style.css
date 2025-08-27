@@ -1116,12 +1116,14 @@ section {
 }
 /* --- FIX: HEADER NIE ZASŁANIA HERO --- */
 
+/* --- FIX: HEADER NIE ZASŁANIA HERO + MOBILE HAMBURGER --- */
+
 /* Domyślnie na dużych ekranach */
 .hero {
   padding-top: 200px; /* zamiast 120px */
 }
 
-/* Tablety */
+/* TABLETY */
 @media (max-width: 992px) {
   .hero {
     padding-top: 180px;
@@ -1132,33 +1134,76 @@ section {
     border-radius: 0;
     padding: 10px 16px;
   }
-  .logo img {
-    height: 28px;
-  }
-  .logo h1 {
-    font-size: 1.2rem;
-  }
+  .logo img { height: 28px; }
+  .logo h1 { font-size: 1.2rem; }
 }
 
-/* Telefony */
+/* TELEFONY */
 @media (max-width: 768px) {
   .hero {
     padding-top: 160px;
+    text-align: center;
   }
   .header {
     padding: 6px 12px;
   }
-  .logo img {
-    height: 24px;
+  .logo img { height: 24px; }
+  .logo h1 { font-size: 1rem; }
+
+  /* mobile nav: schowaj listę, pokaż hamburger */
+  .mobile-menu-toggle { display: block; }
+  .nav-list {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 8px;
   }
-  .logo h1 {
-    font-size: 1rem;
+  .nav-list.open {
+    display: flex;
+  }
+  .nav-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  .header-buttons {
+    width: 100%;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
   }
 }
 
-/* Bardzo małe telefony */
+/* MAŁE TELEFONY */
 @media (max-width: 480px) {
-  .hero {
-    padding-top: 140px;
-  }
+  .hero { padding-top: 140px; }
+  .logo h1 { font-size: 0.95rem; }
+  .hero-title { font-size: 1.6rem; }
+  .hero-description { font-size: 0.9rem; }
+}
+
+/* Styl hamburgera (ikonka) */
+.mobile-menu-toggle {
+  background: transparent;
+  border: none;
+  color: var(--text-white);
+  font-size: 1.6rem;
+  cursor: pointer;
+  display: none; /* domyślnie ukryty — pokazujemy w media query powyżej */
+  align-items: center;
+  gap: 8px;
+  z-index: 1002;
+}
+
+/* proste animacje linków w mobilnym panelu */
+.nav-list a {
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+}
+.nav-list a:hover {
+  background: rgba(255,255,255,0.03);
+  color: var(--primary-light);
 }
