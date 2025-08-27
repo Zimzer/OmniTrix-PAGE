@@ -195,18 +195,14 @@ const translations = {
 function setLanguage(lang) {
   const body = document.body;
 
-  // 1. Add class to start fade-out animation
   body.classList.add('lang-fade');
 
-  // 2. Wait for the animation to complete
   setTimeout(() => {
-    // Change all texts and the flag while the page is "invisible"
     localStorage.setItem('language', lang);
     document.documentElement.lang = lang;
 
     const toggleImage = document.querySelector('#language-toggle img');
     if (toggleImage) {
-      // Corrected path for nested pages like /terms/
       let pathPrefix = './';
       if (window.location.pathname.includes('/terms/') || window.location.pathname.includes('/privacy/')) {
         pathPrefix = '../';
@@ -219,7 +215,6 @@ function setLanguage(lang) {
       const key = element.getAttribute('data-translate');
       if (translations[lang] && translations[lang][key]) {
         if (element.tagName === 'META' || element.tagName === 'TITLE') {
-          // For meta tags, update 'content'. For title, update 'textContent'.
           if (element.hasAttribute('content')) {
             element.setAttribute('content', translations[lang][key]);
           } else {
@@ -231,14 +226,13 @@ function setLanguage(lang) {
       }
     });
 
-    // 3. Remove the class to start fade-in animation
     body.classList.remove('lang-fade');
-  }, 300); // This time must match the transition time in CSS (0.3s = 300ms)
+  }, 300);
 }
 
 // --- MAIN SCRIPT LOGIC ---
 document.addEventListener('DOMContentLoaded', () => {
-  
+
   // --- Initialize Language Toggle ---
   const toggleButton = document.getElementById('language-toggle');
   if (toggleButton) {
@@ -250,7 +244,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --- Initial Language Load ---
-  // Generate commands first (if on index page), then set the language
   if (document.querySelector('.command-list')) {
       generateCommandGroups();
   }
@@ -267,17 +260,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // --- Mobile Menu ---
+  // =================================================================
+  // --- MOBILE MENU (ULEPSZONA WERSJA) ---
+  // =================================================================
   const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-  const navContainer = document.querySelector('.nav-container');
+  const navContainer = document.getElementById('nav-container'); // Zmiana na getElementById
   const navLinks = document.querySelectorAll('.nav-link');
 
-  if(mobileMenuToggle && navContainer){
+  if (mobileMenuToggle && navContainer) {
     mobileMenuToggle.addEventListener('click', () => {
-      navContainer.classList.toggle('active');
-      document.body.classList.toggle('menu-open');
+      const isOpened = navContainer.classList.toggle('active');
+      mobileMenuToggle.setAttribute('aria-expanded', isOpened);
+      document.body.classList.toggle('menu-open', isOpened);
       const icon = mobileMenuToggle.querySelector('i');
-      icon.className = navContainer.classList.contains('active') ? 'fas fa-times' : 'fas fa-bars';
+      icon.className = isOpened ? 'fas fa-times' : 'fas fa-bars';
     });
   }
 
@@ -285,7 +281,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (navContainer && navContainer.classList.contains('active')) {
       navContainer.classList.remove('active');
       document.body.classList.remove('menu-open');
-      if(mobileMenuToggle) mobileMenuToggle.querySelector('i').className = 'fas fa-bars';
+      mobileMenuToggle.setAttribute('aria-expanded', 'false');
+      if (mobileMenuToggle) {
+        mobileMenuToggle.querySelector('i').className = 'fas fa-bars';
+      }
     }
   };
 
@@ -303,6 +302,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // Zamykanie menu klawiszem Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navContainer && navContainer.classList.contains('active')) {
+      closeMobileMenu();
+    }
+  });
+  // =================================================================
+  // --- KONIEC SEKCJI MOBILE MENU ---
+  // =================================================================
+
+
   // --- Smooth Scrolling ---
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -319,7 +329,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Commands Section Logic ---
   const commandsSection = document.querySelector('.commands');
-  if(commandsSection) {
+  if (commandsSection) {
     const categories = document.querySelectorAll('.category');
     let userInteracted = false;
     let currentCategoryIndex = 0;
@@ -421,7 +431,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (progressBar) progressBar.style.width = '0%';
     });
 
-    // --- Initial Command Animations ---
     setTimeout(() => {
       const activeGroup = document.querySelector('.command-group.active');
       if (activeGroup) {
