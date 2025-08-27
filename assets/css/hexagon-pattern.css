@@ -185,4 +185,28 @@
     display: none; /* całkowicie wyłączone tło na telefonach */
   }
 }
+/* --- RESPONSYWNE HEXY --- */
+@media (max-width: 992px) {
+  #heroPattern {
+    opacity: 0.3;
+    width: 150%;
+    height: 120%;
+  }
+}
 
+@media (max-width: 768px) {
+  #heroPattern {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.2; /* delikatne na tabletach */
+    transform: none;
+  }
+}
+
+@media (max-width: 576px) {
+  #heroPattern {
+    display: none; /* całkowicie wyłączone na telefonach */
+  }
+}
