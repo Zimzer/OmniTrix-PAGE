@@ -506,6 +506,10 @@ function generateCommandGroups() {
           <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>setlang</div>
           <div class="command-description" data-translate="cmd_setlang_desc">Set the bot language on the server</div>
         </div>
+        <div class="command-item">
+          <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>audit</div>
+          <div class="command-description" data-translate="cmd_audit_desc">Shows recent actions in server audit logs</div>
+        </div>
       </div>
     </div>
   `;
@@ -584,10 +588,6 @@ function generateCommandGroups() {
         <div class="command-item">
           <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>prop</div>
           <div class="command-description" data-translate="cmd_prop_desc">Link to invite the bot to other servers</div>
-        </div>
-          <div class="command-item">
-          <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>audit</div>
-          <div class="command-description" data-translate="cmd_audit_desc">Shows recent actions in server audit logs</div>
         </div>
     </div>
   `;
