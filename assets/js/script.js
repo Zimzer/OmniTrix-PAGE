@@ -539,6 +539,10 @@ function generateCommandGroups() {
           <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>minecraft-status</div>
           <div class="command-description" data-translate="cmd_mcstatus_desc">Check the status of a Minecraft server</div>
         </div>
+        <div class="command-item">
+          <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>rps</div>
+          <div class="command-description" data-translate="cmd_rps_desc">Rock, Paper, Scissors Game</div>
+        </div>
       </div>
     </div>
   `;
@@ -590,10 +594,7 @@ function generateCommandGroups() {
         <div class="command-item">
           <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>prop</div>
           <div class="command-description" data-translate="cmd_prop_desc">Link to invite the bot to other servers</div>
-        </div>
-        <div class="command-item">
-          <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>rps</div>
-          <div class="command-description" data-translate="cmd_rps_desc">Rock, Paper, Scissors Game</div>
+          </div>
         </div>
     </div>
   `;
