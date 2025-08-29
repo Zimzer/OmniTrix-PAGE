@@ -3,7 +3,7 @@
 const translations = {
   en: {
     // Meta Tags
-    meta_title: "OmniTrix - BOT",
+    meta_title: "OmniTrix - Multifunctional Bot",
     meta_title_content: "OmniTrix - Multifunctional Bot",
     meta_description_content: "OmniTrix - The highest quality app for your Discord server!",
     // Navigation & Buttons
@@ -98,7 +98,7 @@ const translations = {
   },
   pl: {
     // Meta Tags
-    meta_title: "OmniTrix - BOT",
+    meta_title: "OmniTrix - Wielofunkcyjny Bot",
     meta_title_content: "OmniTrix - Wielofunkcyjny Bot",
     meta_description_content: "OmniTrix - Najwyższej jakości aplikacja dla Twojego serwera Discord!",
     // Navigation & Buttons
