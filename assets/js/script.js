@@ -89,12 +89,12 @@ const translations = {
     terms_title: "Terms of Service",
     terms_subtitle: "Please read these terms carefully before using OmniTrix",
     terms_header: "Terms of Service",
-    terms_p1: "Welcome to OmniTrix! These Terms of Service ('Terms') govern your access to and use of the OmniTrix Discord music bot ('Bot'), website, and related services (collectively, the 'Services'). By using our Services, you agree to be bound by these Terms.",
+    terms_p1: "Welcome to OmniTrix! These Terms of Service (Terms) govern your use of the OmniTrix Discord bot (the Bot). By adding the Bot to your Discord server or by using the Bot's commands, you agree to these Terms. The person who adds the Bot to a server is responsible for ensuring that their server members are aware of and comply with these terms.",
     // Privacy Policy Page
     privacy_title: "Privacy Policy",
     privacy_subtitle: "How we collect, use, and protect your information",
-    privacy_header: "Privacy Policy",
-    privacy_p1: "At OmniTrix, we take your privacy seriously. This Privacy Policy explains how we collect, use, and protect your personal information when you use our Discord music bot ('Bot'), website, and related services (collectively, the 'Services')."
+    privacy_header: "Privacy Policy for OmniTrix Discord Bot",
+    privacy_p1: "This Privacy Policy describes how <strong>zimzer_</strong> (we, us, or our) collects, uses, and shares information in connection with your use of the OmniTrix Discord bot (the Bot). Your privacy is critically important to us. We are committed to protecting it and being transparent about the data we process. By using the Bot, you agree to the collection and use of information in accordance with this policy."
   },
   pl: {
     // Meta Tags
@@ -184,12 +184,12 @@ const translations = {
     terms_title: "Warunki korzystania z usługi",
     terms_subtitle: "Przeczytaj uważnie te warunki przed użyciem OmniTrix",
     terms_header: "Warunki korzystania z usługi",
-    terms_p1: "Witaj w OmniTrix! Niniejsze Warunki korzystania z usługi ('Warunki') regulują dostęp i korzystanie z bota muzycznego OmniTrix na Discordzie ('Bot'), strony internetowej i powiązanych usług (łącznie 'Usługi'). Korzystając z naszych Usług, zgadzasz się na przestrzeganie niniejszych Warunków.",
+    terms_p1: "Witamy w OmniTrix! Niniejsze Warunki korzystania z usługi (dalej „Warunki”) regulują korzystanie z bota OmniTrix Discord (dalej „Bot”). Dodając bota do swojego serwera Discord lub korzystając z jego poleceń, akceptujesz niniejsze Warunki. Osoba dodająca bota do serwera jest odpowiedzialna za zapewnienie, że użytkownicy serwera znają niniejsze Warunki i ich przestrzegają.",
     // Privacy Policy Page
     privacy_title: "Polityka Prywatności",
     privacy_subtitle: "Jak zbieramy, używamy i chronimy Twoje informacje",
-    privacy_header: "Polityka Prywatności",
-    privacy_p1: "W OmniTrix poważnie podchodzimy do Twojej prywatności. Niniejsza Polityka Prywatności wyjaśnia, jak zbieramy, używamy i chronimy Twoje dane osobowe, gdy korzystasz z naszego bota muzycznego na Discordzie ('Bot'), strony internetowej i powiązanych usług (łącznie 'Usługi')."
+    privacy_header: "Polityka prywatności dla bota discord OmniTrix",
+    privacy_p1: "Niniejsza Polityka Prywatności opisuje, w jaki sposób <strong>zimzer_</strong> (my, nas lub nasz) gromadzi, wykorzystuje i udostępnia informacje związane z korzystaniem z bota OmniTrix Discord (zwanego dalej „Botem”). Twoja prywatność jest dla nas niezwykle ważna. Dbamy o jej ochronę i transparentność w zakresie przetwarzanych przez nas danych. Korzystając z bota, wyrażasz zgodę na gromadzenie i wykorzystywanie informacji zgodnie z niniejszą polityką."
   }
 };
 
