@@ -68,6 +68,7 @@ const translations = {
     cmd_prop_desc: "Report the introduction of a function or feature",
     cmd_audit_desc: "Shows recent actions in server audit logs",
     cmd_rps_desc: "Rock, Paper, Scissors Game",
+    cmd_animal_desc: "Random animal image.",
     // Community Section
     community_title: "Join Our Community",
     community_subtitle: "Get help, share feedback, and connect with other server owners",
@@ -163,6 +164,7 @@ const translations = {
     cmd_prop_desc: "Zgłoś propozycję dodania komendy lub funkcji",
     cmd_audit_desc: "Pokazuje ostatnie działania w dziennikach audytu serwera",
     cmd_rps_desc: "Gra kamień, papier, nożyce",
+    cmd_animal_desc: "Losowe zdjęcie zwierzęcia",
     // Community Section
     community_title: "Dołącz do Naszej Społeczności",
     community_subtitle: "Uzyskaj pomoc, podziel się opinią i połącz się z innymi właścicielami serwerów",
@@ -542,6 +544,10 @@ function generateCommandGroups() {
         <div class="command-item">
           <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>rps</div>
           <div class="command-description" data-translate="cmd_rps_desc">Rock, Paper, Scissors Game</div>
+        </div>
+          <div class="command-item">
+          <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>animal</div>
+          <div class="command-description" data-translate="cmd_animal_desc">Random animal image</div>
         </div>
       </div>
     </div>
