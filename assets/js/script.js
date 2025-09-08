@@ -69,6 +69,7 @@ const translations = {
     cmd_audit_desc: "Shows recent actions in server audit logs",
     cmd_rps_desc: "Rock, Paper, Scissors Game",
     cmd_animal_desc: "Random animal image.",
+    cmd_greet_desc: "Zarządzaj komunikatem powitalnym serwera.",
     // Community Section
     community_title: "Join Our Community",
     community_subtitle: "Get help, share feedback, and connect with other server owners",
@@ -165,6 +166,7 @@ const translations = {
     cmd_audit_desc: "Pokazuje ostatnie działania w dziennikach audytu serwera",
     cmd_rps_desc: "Gra kamień, papier, nożyce",
     cmd_animal_desc: "Losowe zdjęcie zwierzęcia",
+    cmd_greet_desc: "Manage the server's welcome message",
     // Community Section
     community_title: "Dołącz do Naszej Społeczności",
     community_subtitle: "Uzyskaj pomoc, podziel się opinią i połącz się z innymi właścicielami serwerów",
@@ -513,6 +515,10 @@ function generateCommandGroups() {
         <div class="command-item">
           <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>audit</div>
           <div class="command-description" data-translate="cmd_audit_desc">Shows recent actions in server audit logs</div>
+        </div>
+        <div class="command-item">
+          <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>setgreet</div>
+          <div class="command-description" data-translate="cmd_greet_desc">Manage the server's welcome message</div>
         </div>
       </div>
     </div>
