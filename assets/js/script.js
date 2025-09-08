@@ -69,7 +69,7 @@ const translations = {
     cmd_audit_desc: "Shows recent actions in server audit logs",
     cmd_rps_desc: "Rock, Paper, Scissors Game",
     cmd_animal_desc: "Random animal image.",
-    cmd_greet_desc: "Zarządzaj komunikatem powitalnym serwera.",
+    cmd_greet_desc: "Manage the server's welcome message.",
     // Community Section
     community_title: "Join Our Community",
     community_subtitle: "Get help, share feedback, and connect with other server owners",
@@ -166,7 +166,7 @@ const translations = {
     cmd_audit_desc: "Pokazuje ostatnie działania w dziennikach audytu serwera",
     cmd_rps_desc: "Gra kamień, papier, nożyce",
     cmd_animal_desc: "Losowe zdjęcie zwierzęcia",
-    cmd_greet_desc: "Manage the server's welcome message",
+    cmd_greet_desc: "Zarządzaj komunikatem powitalnym serwera.",
     // Community Section
     community_title: "Dołącz do Naszej Społeczności",
     community_subtitle: "Uzyskaj pomoc, podziel się opinią i połącz się z innymi właścicielami serwerów",
