@@ -70,6 +70,7 @@ const translations = {
     cmd_rps_desc: "Creates a game of rock, paper, scissors against a player/bot",
     cmd_animal_desc: "Sends a random photo of an animal",
     cmd_greet_desc: "Manages the server welcome message",
+    cmd_logs_desc: "Set up or disable a moderation log feed",
     // Community Section
     community_title: "Join Our Community",
     community_subtitle: "Get help, share feedback, and connect with other server owners",
@@ -167,6 +168,7 @@ const translations = {
     cmd_rps_desc: "Tworzy grę kamień, papier, nożyce przeciwko graczowi/botowi",
     cmd_animal_desc: "Wysyła losowe zdjęcie zwierzęcia",
     cmd_greet_desc: "Zarządza komunikatem powitalnym serwera",
+    cmd_logs_desc: "Ustaw lub wyłącz kanał logów moderacyjnych",
     // Community Section
     community_title: "Dołącz do Naszej Społeczności",
     community_subtitle: "Uzyskaj pomoc, podziel się opinią i połącz się z innymi właścicielami serwerów",
@@ -519,6 +521,10 @@ function generateCommandGroups() {
         <div class="command-item">
           <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>setgreet</div>
           <div class="command-description" data-translate="cmd_greet_desc">Manage the server's welcome message</div>
+        </div>
+        <div class="command-item">
+          <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>setlog</div>
+          <div class="command-description" data-translate="cmd_logs_desc">Set up a moderation log feed</div>
         </div>
       </div>
     </div>
