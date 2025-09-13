@@ -495,7 +495,7 @@ function generateCommandGroups() {
           <div class="command-description" data-translate="cmd_clear_desc">Deletes messages from the channel</div>
         </div>
         <div class="command-item">
-          <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>listbans</div>
+          <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>banlist</div>
           <div class="command-description" data-translate="cmd_listbans_desc">Shows a list of all bans</div>
         </div>
         <div class="command-item">
