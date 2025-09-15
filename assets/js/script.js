@@ -71,6 +71,7 @@ const translations = {
     cmd_animal_desc: "Sends a random photo of an animal",
     cmd_greet_desc: "Manages the server welcome message",
     cmd_logs_desc: "Set up or disable a moderation log feed",
+    cmd_movie_desc: "Display movie/series information",
     // Community Section
     community_title: "Join Our Community",
     community_subtitle: "Get help, share feedback, and connect with other server owners",
@@ -169,6 +170,7 @@ const translations = {
     cmd_animal_desc: "Wysyła losowe zdjęcie zwierzęcia",
     cmd_greet_desc: "Zarządza komunikatem powitalnym serwera",
     cmd_logs_desc: "Ustaw lub wyłącz kanał logów moderacyjnych",
+    cmd_movie_desc: "Wyświetl informacje o filmie/serialu",
     // Community Section
     community_title: "Dołącz do Naszej Społeczności",
     community_subtitle: "Uzyskaj pomoc, podziel się opinią i połącz się z innymi właścicielami serwerów",
@@ -612,6 +614,10 @@ function generateCommandGroups() {
         <div class="command-item">
           <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>prop</div>
           <div class="command-description" data-translate="cmd_prop_desc">Link to invite the bot to other servers</div>
+          </div>
+        <div class="command-item">
+          <div class="command-name"><i class="fa-solid fa-slash" style="transform: scaleX(-0.5); margin-right: -5px;"></i>movieinfo</div>
+          <div class="command-description" data-translate="cmd_movie_desc">Display movie/series information</div>
           </div>
         </div>
     </div>
